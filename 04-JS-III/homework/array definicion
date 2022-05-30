@@ -1,0 +1,4 @@
+Definicion de array  :
+    Un arreglo es como una lista de objetos donde podemos almacenar una coleccion  de cualquier tipo de objetos ya sea enteros , strings o funciones u otras listas  , y se puede 
+    recorrer esta lista en forma ordenada y desordenada . 
+    nos permite realizar muchas operaciones como agregar o quitar elementos ya sea al principio, al final de lalista o donde se lo indique
