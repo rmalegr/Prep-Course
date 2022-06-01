@@ -1,0 +1,60 @@
+/*javascript esta diseñado sobre un paradigma basado en objetos
+Un objeto es una colleción de propiedades y una propiedad es una asociación entre unnombre (0 clave ) y un valor
+bracket corchetes similar a la de los arreglos
+vantaja del dotnotation es facil acceder con el punto
+el dotnotation es literal
+delete para eliminar */
+
+
+//EJERICIO EJEMPLO
+
+var alumnos =[
+    {
+        nombre: 'Emi',
+        edad:23,
+        hobbies: ['correr', 'dormir', 'nadar'],
+        amigos:[
+            {
+                nombre:'Martin',
+            },
+            {
+                nombre:'leo',
+            }
+        ],
+    },
+    {
+        nombre:'Franco',
+        edad:21,
+        hobbies:['futbol', 'golf'],
+        amigos:[
+            {
+                nombre:'Emi',
+            },
+            {
+                nombre:'Jimmy',
+            },
+            {
+                nombre:'Matias',
+            }
+        ],
+     },
+];
+
+//keyword  this
+var persona = {
+    nombre: 'Rodrigo',
+    saludar : function(){
+        console.log('Hola ' + this.nombre)
+    }
+};
+
+//Nan not a number
+
+var unObjeto = {
+    metodo : function(){
+        return 'string';
+    }
+}
+undefined
+unObjeto.metodo()
+'string'
