@@ -10,6 +10,13 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  var nuevoArray = []
+  for(props in objeto){
+    nuevoArray.push([props, objeto[props]])
+  }
+                      
+  return nuevoArray
+
 }
 
 
@@ -18,6 +25,16 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  let nuevoObjeto = {};
+  let cadenaTransform = string.split('').sort()
+  for(var i =0; i < cadenaTransform.length; i++){
+    if(!nuevoObjeto[cadenaTransform[i]]){
+      nuevoObjeto[cadenaTransform[i]] = 1
+    }else{
+    nuevoObjeto[cadenaTransform[i]]++
+    }
+  }
+  return nuevoObjeto 
 }
 
 
