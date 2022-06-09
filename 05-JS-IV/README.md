@@ -18,11 +18,11 @@
 
 En esta lección cubriremos:
 
-* Introducción a los Objetos
-* Métodos
-* Bucles ***for…in***
-* Palabra clave ***this***
-* Objetos en Javascript
+- Introducción a los Objetos
+- Métodos
+- Bucles **_for…in_**
+- Palabra clave **_this_**
+- Objetos en Javascript
 
 <div class="iframeContainer">
 <iframe src="https://player.vimeo.com/video/424936732?h=a800057660&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="04 - JS IV - Objetos"></iframe>
@@ -30,22 +30,22 @@ En esta lección cubriremos:
 
 ## Introducción a los Objetos
 
-En la anterior lección aprendimos sobre *arrays* o matrices. Las matrices son contenedores que sostienen colecciones de datos. En esta lección, introduciremos otro contenedor de datos, el *Objeto*. Los objetos y las matrices son similares en ciertas cosas, y muy diferentes en otras. Mientras que los array pueden contener múltiples elementos relacionados unos con otros, los objetos contienen mucha información sobre una sola cosa. Los objetos se instancian usando llaves (`{}`).
+En la anterior lección aprendimos sobre _arrays_ o matrices. Las matrices son contenedores que sostienen colecciones de datos. En esta lección, introduciremos otro contenedor de datos, el _Objeto_. Los objetos y las matrices son similares en ciertas cosas, y muy diferentes en otras. Mientras que los array pueden contener múltiples elementos relacionados unos con otros, los objetos contienen mucha información sobre una sola cosa. Los objetos se instancian usando llaves (`{}`).
 
 ```javascript
 const nuevoObjeto = {};
 ```
 
-### Pares Clave:Valor (***Key:Value***)
+### Pares Clave:Valor (**_Key:Value_**)
 
 A diferencia de las matrices que tienen elementos valorados en índices, los objetos usan un concepto llamado pares de clave:valor. La clave (**key**) es el identificador y el valor (**value**) es el valor que queremos guardar en esa clave. La sintaxis es "clave: valor". Los objetos pueden contener muchos pares de clave-valor, deben estar separados por una coma (**importante**: sin punto y coma dentro de un objeto). Las claves son únicas en un objeto, solo puede haber una clave de ese nombre, aunque, varias claves pueden tener el mismo valor. Los valores pueden ser cualquier tipo de dato de Javascript; cadena, número, booleano, matriz, función o incluso otro objeto. En esta demostración crearemos un objeto `usuario`.
 
 ```javascript
 const user = {
-    username: 'juan.perez',
-    password: 'loremipsumpwd123',
-    lovesJavascript: true,
-    favoriteNumber: 42
+  username: "juan.perez",
+  password: "loremipsumpwd123",
+  lovesJavascript: true,
+  favoriteNumber: 42,
 };
 ```
 
@@ -57,16 +57,16 @@ Con la notación de puntos podemos llamar al nombre del objeto, un punto y el no
 
 ```javascript
 user.lovesJavascript; // true
-user.username;        // juan.perez
+user.username; // juan.perez
 ```
 
 La notación de corchetes es como llamar a un elemento en una matriz, aunque con corchetes debemos usar una cadena o número, o una variable que apunte a una cadena o número. Se puede llamar a cada clave envolviéndola con comillas:
 
 ```javascript
-const passString = 'password';
-user['lovesJavascript']; // true
-user['username'];        // juan.perez
-user[passString];        // loremipsumpwd123
+const passString = "password";
+user["lovesJavascript"]; // true
+user["username"]; // juan.perez
+user[passString]; // loremipsumpwd123
 ```
 
 Generalmente, verás que los corchetes casi siempre se usan con variables.
@@ -77,13 +77,13 @@ Asignar valores funciona igual que acceder a ellos. Podemos asignarlos, cuando c
 
 ```javascript
 const nuevoUsuario = {
-    esNuevo: true
-}
+  esNuevo: true,
+};
 
-const loveJSString = 'lovesJavascript';
+const loveJSString = "lovesJavascript";
 
-nuevoUsuario.username = 'otro.nombre.de.usuario';
-nuevoUsuario['password'] = '12345';
+nuevoUsuario.username = "otro.nombre.de.usuario";
+nuevoUsuario["password"] = "12345";
 nuevoUsuario[loveJSString] = true;
 ```
 
@@ -93,7 +93,7 @@ Si queremos eliminar una propiedad, podemos hacerlo usando la palabra clave `del
 
 ```javascript
 const nuevoObjeto = {
-    eliminarEstaPropiedad: true
+  eliminarEstaPropiedad: true,
 };
 
 delete nuevoObjeto.eliminarEstaPropiedad;
@@ -107,29 +107,29 @@ En los objetos, los valores se pueden establecer en funciones. Las funciones gua
 
 ```javascript
 const nuevoObjeto = {
-    decirHola: function() {
-        console.log('Hola a todo el mundo!');
-    }
-}
+  decirHola: function () {
+    console.log("Hola a todo el mundo!");
+  },
+};
 
 nuevoObjeto.decirHola(); //Hola a todo el mundo!
 ```
 
-## Bucles ***for…in***
+## Bucles **_for…in_**
 
-A veces queremos iterar sobre cada par clave-valor en nuestro objeto. Con las matrices, utilizamos un estándar para el bucle y una variable de número de índice. Los objetos no contienen índices numéricos, por lo que el bucle estándar no funcionará para los objetos. Javascript tiene un segundo tipo de bucle for integrado llamado "*for ... in loop*". Es una sintaxis ligeramente diferente, comienza igual pero entre paréntesis declararemos una variable, la palabra clave `in` y el nombre del objeto. Esto recorrerá cada clave del objeto y finalizará cuando se hayan iterado todas las claves. Podemos usar esta clave, y la notación de corchetes, en nuestro bucle for para acceder al valor asociado con esa clave.
+A veces queremos iterar sobre cada par clave-valor en nuestro objeto. Con las matrices, utilizamos un estándar para el bucle y una variable de número de índice. Los objetos no contienen índices numéricos, por lo que el bucle estándar no funcionará para los objetos. Javascript tiene un segundo tipo de bucle for integrado llamado "_for ... in loop_". Es una sintaxis ligeramente diferente, comienza igual pero entre paréntesis declararemos una variable, la palabra clave `in` y el nombre del objeto. Esto recorrerá cada clave del objeto y finalizará cuando se hayan iterado todas las claves. Podemos usar esta clave, y la notación de corchetes, en nuestro bucle for para acceder al valor asociado con esa clave.
 
 ```javascript
 const usuario = {
-    username: 'juan.perez',
-    password: 'loremipsumpwd123',
-    lovesJavascript: true,
-    favoriteNumber: 42
+  username: "juan.perez",
+  password: "loremipsumpwd123",
+  lovesJavascript: true,
+  favoriteNumber: 42,
 };
 
-for (let clave in usuario){
-    console.log(clave);
-    console.log(usuario[clave]);
+for (let clave in usuario) {
+  console.log(clave);
+  console.log(usuario[clave]);
 }
 
 // username
@@ -142,19 +142,19 @@ for (let clave in usuario){
 // 42
 ```
 
-## La palabra clave ***this***
+## La palabra clave **_this_**
 
 Los objetos tienen una palabra clave autorreferencial que se puede aplicar en cada objeto llamado `this`. Cuando se llama dentro de un objeto, se refiere a ese mismo objeto. `this` puede usarse para acceder a otras claves en el mismo objeto, y es especialmente útil en métodos:
 
 ```javascript
 const usuario = {
-    username: 'juan.perez',
-    password: 'loremipsumpwd123',
-    lovesJavascript: true,
-    favoriteNumber: 42,
-    decirHola: function(){
-        console.log( this.username + ' manda saludos!');
-    }
+  username: "juan.perez",
+  password: "loremipsumpwd123",
+  lovesJavascript: true,
+  favoriteNumber: 42,
+  decirHola: function () {
+    console.log(this.username + " manda saludos!");
+  },
 };
 
 usuario.decirHola(); // 'juan.perez manda saludos!'
@@ -162,13 +162,13 @@ usuario.decirHola(); // 'juan.perez manda saludos!'
 
 Nota: la palabra clave `this` a veces puede ser uno de los temas más difíciles en Javascript. Lo estamos usando muy básicamente aquí, pero el tema se vuelve mucho más complejo muy pronto.
 
-### ***This*** y el Execution Context
+### **_This_** y el Execution Context
 
-* #### Contexto global inicial
+- #### Contexto global inicial
 
 Este es el caso cuando ejecutamos código en el contexto global (afuera de cualquier función). En este caso `this` hace referencia al objeto `global`, en el caso del browser hace referencia a `window`.
 
-``` javascript
+```javascript
 // En el browser esto es verdad:
 > console.log(this === window);
 < true
@@ -179,11 +179,11 @@ Este es el caso cuando ejecutamos código en el contexto global (afuera de cualq
 < 37
 ```
 
-* #### En el contexto de una función
+- #### En el contexto de una función
 
-Cuando estamos dentro de una función, el valor de `this` va a depender de *cómo sea invocada la función*.
+Cuando estamos dentro de una función, el valor de `this` va a depender de _cómo sea invocada la función_.
 
-``` javascript
+```javascript
 > function f1(){
     return this;
   }
@@ -197,13 +197,13 @@ Cuando estamos dentro de una función, el valor de `this` va a depender de *cóm
 
 En este ejemplo la función es invocada por el objeto global por lo tanto this hará referencia a `window`.
 
-> Si usamos el modo `strict` de Javascript, el ejemplo de arriba va a devolver `undefined`, ya que no le deja al interprete *asumir* que `this` es el objeto global.
+> Si usamos el modo `strict` de Javascript, el ejemplo de arriba va a devolver `undefined`, ya que no le deja al interprete _asumir_ que `this` es el objeto global.
 
-* #### Como método de un objeto
+- #### Como método de un objeto
 
-Cuando usamos el *keyword* `this` dentro de una función que es un método de un objeto, `this` toma hace referencia al objeto sobre el cual se llamó el método:
+Cuando usamos el _keyword_ `this` dentro de una función que es un método de un objeto, `this` toma hace referencia al objeto sobre el cual se llamó el método:
 
-``` javascript
+```javascript
 > var o = {
     prop: 37,
     f: function() {
@@ -216,9 +216,9 @@ Cuando usamos el *keyword* `this` dentro de una función que es un método de un
 // this hace referencia a `o`
 ```
 
-En este caso, *no depende* donde hayamos definido la función, lo único que importa es que la función haya sido invocada como método de un objeto. Por ejemplo, si definimos la función afuera:
+En este caso, _no depende_ donde hayamos definido la función, lo único que importa es que la función haya sido invocada como método de un objeto. Por ejemplo, si definimos la función afuera:
 
-``` javascript
+```javascript
 > var o = {prop: 37};
 
 // declaramos la función
@@ -236,7 +236,7 @@ En este caso, *no depende* donde hayamos definido la función, lo único que imp
 
 De todos modos, hay que tener cuidado con el keyword `this`, ya que pueden aparecer casos donde es contra intuitivo ( Como varias cosas de JavaScript ). Veamos el siguiente ejemplo:
 
-``` javascript
+```javascript
 > var obj = {
     nombre: 'Objeto',
     log: function(){
@@ -263,21 +263,21 @@ Para resolver este tipo de problemas existe un patrón muy común, y se basa en 
 
 ```javascript
 var obj = {
-  nombre: 'Objeto',
-  log   : function(){
-    this.nombre = 'Cambiado'; // this se refiere a este objeto, a `obj`
+  nombre: "Objeto",
+  log: function () {
+    this.nombre = "Cambiado"; // this se refiere a este objeto, a `obj`
     console.log(this); // obj
 
     var that = this; // Guardo la referencia a this
 
-    var cambia = function( str ){
-      that.nombre = str;  // Uso la referencia dentro de esta funcion
-    }
+    var cambia = function (str) {
+      that.nombre = str; // Uso la referencia dentro de esta funcion
+    };
 
-    cambia('Hoola!!');
+    cambia("Hoola!!");
     console.log(this);
-  }
-}
+  },
+};
 ```
 
 De esta forma, `that` (puede tener cualquier nombre) va a apuntar al objeto `obj` (`this` apuntaba a ese objeto cuando hicimos la asignación). Ahora si, podemos usar `that` en vez de `this` y estar seguros qué es lo que va a tener adentro.
@@ -288,9 +288,9 @@ En esta lección aprendimos qué son los Objetos y las muchas formas que existen
 
 ## Recursos adicionales
 
-* [MDN: Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-* [MDN: this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
-* [MDN: for...in Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+- [MDN: Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+- [MDN: this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+- [MDN: for...in Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
 
 ## Homework
 
@@ -310,4 +310,4 @@ Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/Pr
 
 ---
 
-#### Si tienes dudas sobre este tema, puedes consultarlas en el canal ***05_js-iv*** de Slack
+#### Si tienes dudas sobre este tema, puedes consultarlas en el canal **_05_js-iv_** de Slack

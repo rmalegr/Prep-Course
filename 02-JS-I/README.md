@@ -18,13 +18,13 @@
 
 En esta lección cubriremos:
 
-* Introducción a Javascript
-* Variables
-* Strings, Numbers y Booleanos
-* Math
-* Introducción a las Funciones
-* Control de flujo y operadores de comparación
-* Introducción a Node y NPM
+- Introducción a Javascript
+- Variables
+- Strings, Numbers y Booleanos
+- Math
+- Introducción a las Funciones
+- Control de flujo y operadores de comparación
+- Introducción a Node y NPM
 
 <div class="iframeContainer">
 <iframe src="https://player.vimeo.com/video/423852829?h=fd22fd70c6&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Clase 01 Introducci&amp;oacute;n JS"></iframe>
@@ -46,22 +46,22 @@ Existen tres formas de declarar una variable:
 
 ### var
 
-Es la forma declarar una variable en ES5 (ES5 es la versión de JS, hoy en día existe ES6 que es la nueva versión, pero que todavía no es la más usada). Esta es una *palabra clave* genérica para "variable".
+Es la forma declarar una variable en ES5 (ES5 es la versión de JS, hoy en día existe ES6 que es la nueva versión, pero que todavía no es la más usada). Esta es una _palabra clave_ genérica para "variable".
 
 Las dos formas siguentes, si bien son válidas, vamos a utilizarlas más adelante en la carrera, cuando tengamos más claros otros conceptos:
 
 ### let
 
-Es una nueva palabra clave de ES6, esto asignará una variable muy similar a `var`, pero con un comportamiento un poco diferente. Lo más notable es que difiere al crear un "nivel de *scope*" (hablaremos sobre esto más adelante).
+Es una nueva palabra clave de ES6, esto asignará una variable muy similar a `var`, pero con un comportamiento un poco diferente. Lo más notable es que difiere al crear un "nivel de _scope_" (hablaremos sobre esto más adelante).
 
 ### const
 
 También es nuevo en ES6. Un `const` es una variable que no se podrá cambiar. Esto es la abreviatura de "constante".
 
 ```javascript
-var nombre = 'Juan'; // Vamos a usar principalemente esta forma
-let apellido = 'Perez';
-const comidafavorita = 'Pizza';
+var nombre = "Juan"; // Vamos a usar principalemente esta forma
+let apellido = "Perez";
+const comidafavorita = "Pizza";
 ```
 
 #### console.log
@@ -80,14 +80,14 @@ En ciencias de la computación, un tipo de dato informático o simplemente tipo,
 
 Los tipos de datos aceptados varían de lenguaje en lenguaje.
 
-Los tipos de datos más básicos en Javascript son ***Strings***, ***Numbers***, and ***Booleans***.
+Los tipos de datos más básicos en Javascript son **_Strings_**, **_Numbers_**, and **_Booleans_**.
 
 ### Strings
 
 Las "strings" son bloques de texto, siempre se definirán entre comillas, ya sea simple o doble. Cualquier texto entre comillas es una cadena o string.
 
 ```javascript
-var nombrePerro = 'firulais';
+var nombrePerro = "firulais";
 ```
 
 ### Numbers
@@ -111,7 +111,7 @@ Los valores posibles de un dato booleando en JS son: `true` o `false`.
 
 ## Operadores
 
-Vamos a poder realizar operaciones en JavaScript a través de los ***operadores***. Básicamente son símbolos que ya conocemos (`+`, `-`, `/`, `*`) que indican al intérprete de JavaScript las operaciones que debe realizar.
+Vamos a poder realizar operaciones en JavaScript a través de los **_operadores_**. Básicamente son símbolos que ya conocemos (`+`, `-`, `/`, `*`) que indican al intérprete de JavaScript las operaciones que debe realizar.
 
 Por ejemplo: Para el intérprete al ver el signo `+`, sabe que tiene que ejecutar la función suma (que tiene internamente definida), y toma como parámetros los términos que estén a la izquierda y la derecha del operador.
 
@@ -124,15 +124,15 @@ De hecho, esa forma de escribir tiene un nombre particular, se llama notación n
 
 ![Notaciones](/_src/assets/02-JS-I/notaciones.png)
 
-En fin, lo importante a tener en cuenta es que los operadores *son* funciones.
+En fin, lo importante a tener en cuenta es que los operadores _son_ funciones.
 
 ## Precedencia de Operadores y Asociatividad
 
 Esto parece aburrido, pero nos va a ayudar a saber cómo piensa el intérprete y bajo qué reglas actúa.
 
-La *precedencia de operadores* es básicamente el orden en que se van a llamar las funciones de los operadores. Estás funciones son llamadas en ***orden de precedencia*** (las que tienen **mayor** precedencia se ejecutan primero).  O sea que si tenemos más de un operador, el intérprete va a llamar al operador de mayor precendencia primero y después va a seguir con los demás.
+La _precedencia de operadores_ es básicamente el orden en que se van a llamar las funciones de los operadores. Estás funciones son llamadas en **_orden de precedencia_** (las que tienen **mayor** precedencia se ejecutan primero). O sea que si tenemos más de un operador, el intérprete va a llamar al operador de mayor precendencia primero y después va a seguir con los demás.
 
-La *Asociatividad de operadores* es el orden en el que se ejecutan los operadores cuando tienen la misma precedencia, es decir, de izquierda a derecha o de derecha a izquierda.
+La _Asociatividad de operadores_ es el orden en el que se ejecutan los operadores cuando tienen la misma precedencia, es decir, de izquierda a derecha o de derecha a izquierda.
 
 > Podemos ver la documentación completa sobre Precedencia y Asociatividad de los operadores de JavaScript [acá](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table)
 
@@ -145,7 +145,9 @@ No confundir el orden de ejecución con asociatividad y precedencia, [ver esta p
 Ahora si tuvieramos la misma precedencia entraría en juego la asociatividad, veamos un ejemplo:
 
 ```javascript
-var a = 1, b = 2, c = 3;
+var a = 1,
+  b = 2,
+  c = 3;
 
 a = b = c;
 
@@ -158,7 +160,7 @@ Qué veriamos en el console.log? Para eso tenemos que revisar la tabla por la as
 
 Los operadores matemáticos trabajan en JavaScript tal como lo harían en su calculadora.
 
-#### + - * / =
+#### + - \* / =
 
 ```javascript
 1 + 1 = 2
@@ -180,6 +182,7 @@ Algo que quizás no haya visto antes es el Módulo (`%`), este operador matemát
 ## Objetos Globales y métodos
 
 Javascript tiene una serie de objetos integrados para que los usemos. Ya hemos visto, y hemos estado usando, el objeto de consola y su método `log`. Otro de estos objetos es `Math`. Éste tiene varios métodos, al igual que `console` tiene `log`. Para agregar a esto, algunos de nuestros tipos de datos también tienen métodos incorporados.
+
 #### Math.pow
 
 Podemos usar el método `pow` en `Math` para devolver un número elevado a un exponente. Tomará dos números.
@@ -206,7 +209,7 @@ Math.ceil(6.0001) = 7;
 El tipo de datos "string" tiene un método incorporado llamado `.length`. Cualquier cadena que llamemos a esto devolverá la cantidad de caracteres en esa cadena.
 
 ```javascript
-var nombreGato = 'felix';
+var nombreGato = "felix";
 console.log(nombreGato.length); // 5
 ```
 
@@ -214,7 +217,7 @@ Veremos muchos otros métodos integrados en otros tipos de datos a lo largo de e
 
 ## Introducción a las Funciones
 
-Las funciones son una parte muy importante de todo lenguaje de programacion y sobre todo en JavaScript. Són tipos particulares de objetos, llamados ***callable objects*** u objetos invocables, por lo que tienen las mismas propiedades que cualquier objeto.
+Las funciones son una parte muy importante de todo lenguaje de programacion y sobre todo en JavaScript. Són tipos particulares de objetos, llamados **_callable objects_** u objetos invocables, por lo que tienen las mismas propiedades que cualquier objeto.
 
 Ahora que tenemos un conjunto de variables, necesitamos funciones para calcularlas, cambiarlas, hacer algo con ellas. Hay tres formas en que podemos construir una función.
 
@@ -236,7 +239,7 @@ Una función comenzará con la palabra clave `function`, esto le dice a lo que s
 
 ```javascript
 function logHola() {
-    console.log('hola!');
+  console.log("hola!");
 }
 
 logHola();
@@ -250,20 +253,20 @@ Ahora que podemos ejecutar una función básica, vamos a comenzar a pasarle argu
 
 ```javascript
 function logHola(nombre) {
-    console.log('Hola, ' + nombre);
+  console.log("Hola, " + nombre);
 }
 
-logHola('Martin');
+logHola("Martin");
 ```
 
 Si agregamos una variable a los paréntesis cuando declaramos la función, podemos usar esta variable dentro de nuestra función. Iniciamos el valor de esta variable pasándola a la función cuando la llamamos. Entonces en este caso `nombre = 'Martin'`. También podemos pasar otras variables a esto:
 
 ```javascript
 function logHola(nombre) {
-    console.log( `Hola, ${nombre}`);
+  console.log(`Hola, ${nombre}`);
 }
 
-var miNombre = 'Antonio';
+var miNombre = "Antonio";
 logHola(miNombre);
 ```
 
@@ -315,11 +318,11 @@ En este ejemplo, vamos a utilizar operadores de control de flujo y comparación.
 
 ```javascript
 function puedeManejar(edad) {
-    if (edad > 18) {
-        return true;
-    }
+  if (edad > 18) {
+    return true;
+  }
 
-    return false;
+  return false;
 }
 
 puedeManejar(22); // true
@@ -327,13 +330,13 @@ puedeManejar(22); // true
 
 Aquí estamos tomando un número (`edad`) y verificando si la declaración es `true` (`22>18`), lo es, por lo que devolveremos `true`, y la función se detendrá. Si no es así, omitirá ese código y la función devolverá `false`.
 
-El símbolo "mayor que" (`>`) que ve en el último ejemplo se llama *Operador de comparación*. Los operadores de comparación evalúan dos elementos y devuelven ***verdadero*** o ***falso***. Estos operadores son: `<`, `<=`, `>`, `> =`, `===`, `! ==`. Aprenderemos más sobre estos operadores en la próxima lección.
+El símbolo "mayor que" (`>`) que ve en el último ejemplo se llama _Operador de comparación_. Los operadores de comparación evalúan dos elementos y devuelven **_verdadero_** o **_falso_**. Estos operadores son: `<`, `<=`, `>`, `> =`, `===`, `! ==`. Aprenderemos más sobre estos operadores en la próxima lección.
 
 ## Recursos adicionales
 
-* [Codecademy: Learn Javascript](https://www.codecademy.com/learn/learn-javascript)
-* [Udacity: Intro to Javascript](https://www.udacity.com/course/intro-to-javascript--ud803)
-* [MDN: Official Javascript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Codecademy: Learn Javascript](https://www.codecademy.com/learn/learn-javascript)
+- [Udacity: Intro to Javascript](https://www.udacity.com/course/intro-to-javascript--ud803)
+- [MDN: Official Javascript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ## Homework
 
@@ -353,4 +356,4 @@ Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/Pr
 
 ---
 
-#### Si tienes dudas sobre este tema, puedes consultarlas en el canal ***02_js-i*** de Slack
+#### Si tienes dudas sobre este tema, puedes consultarlas en el canal **_02_js-i_** de Slack

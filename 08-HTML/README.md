@@ -18,36 +18,34 @@
 
 En esta clase veremos:
 
-* Introducción a HTML.
-* Elementos/tags HTML básicos.
-* Introducción a CSS.
-* Selectores CSS y el tag \<style\> .
-* Estilos Básicos.
-* Modelo de Caja.
-* Hojas de estilos externas y el tag \<link\>.
+- Introducción a HTML.
+- Elementos/tags HTML básicos.
+- Introducción a CSS.
+- Selectores CSS y el tag \<style\> .
+- Estilos Básicos.
+- Modelo de Caja.
+- Hojas de estilos externas y el tag \<link\>.
 
 ## Introducción a HTML
 
-HTML es el bloque básico con el que está construido internet. Todas las páginas web utilizan HTML. *No es un lenguaje de programación* propiamente dicho, sino, es un lenguaje de [**Markup**](https://es.wikipedia.org/wiki/Lenguaje_de_marcado): son lenguajes que incorporan al texto marcas o etiquetas que luego son interpretadas para darle información extra sobre la estructura del texto. En el caso de HTML, este será interpretado por los browsers, que tambien presentaran el código en forma gráfica.
+HTML es el bloque básico con el que está construido internet. Todas las páginas web utilizan HTML. _No es un lenguaje de programación_ propiamente dicho, sino, es un lenguaje de [**Markup**](https://es.wikipedia.org/wiki/Lenguaje_de_marcado): son lenguajes que incorporan al texto marcas o etiquetas que luego son interpretadas para darle información extra sobre la estructura del texto. En el caso de HTML, este será interpretado por los browsers, que tambien presentaran el código en forma gráfica.
 
 HTML es la abreviatura de **Hyper Text Markup Language**:
 
-* Hyper Text: "Hyper Texto" quiere decir [texto con links](https://es.wikipedia.org/wiki/Hipertexto)
-* Markup Language: Los "Lenguajes de Marcado" son lenguajes de programación basados en etiquetas que uno agrega a un texto para darle estructura e información adicional. A diferencia de los "Lenguajes de Scripting" que se usan para crear programas informáticos, los lenguajes de marcado son sólo reglas para ordenar un documento.
+- Hyper Text: "Hyper Texto" quiere decir [texto con links](https://es.wikipedia.org/wiki/Hipertexto)
+- Markup Language: Los "Lenguajes de Marcado" son lenguajes de programación basados en etiquetas que uno agrega a un texto para darle estructura e información adicional. A diferencia de los "Lenguajes de Scripting" que se usan para crear programas informáticos, los lenguajes de marcado son sólo reglas para ordenar un documento.
 
 ### Elementos básicos HTML
 
 HTML define una serie de elementos (o etiquetas, o tags) que serviran para delimitar texto. Cada tag está encerrado en `< >` y tiene un nombre. Los tags se abren y se cierran, los tags de cerrado incluyen con un "/" en el principio del tag que cierra. Por ejemplo:
 
 ```html
-<element>
-  ...
-</element>
+<element> ... </element>
 ```
 
 ![alt text](/_src/assets/08-HTML/html.jpg)
 
-Algunos tags html, por su naturaleza, no necesitan tener nada *adentro*. Por lo tanto podemos abreviar su escritura y en vez de abrir y cerrar el tag, simplemente agregamos un "/" antes del bracket final.
+Algunos tags html, por su naturaleza, no necesitan tener nada _adentro_. Por lo tanto podemos abreviar su escritura y en vez de abrir y cerrar el tag, simplemente agregamos un "/" antes del bracket final.
 
 ```html
 <img src="http://imagen.com/img.jpg" />
@@ -55,7 +53,7 @@ Algunos tags html, por su naturaleza, no necesitan tener nada *adentro*. Por lo 
 
 ### Atributos
 
-En su mayoría de los atributos de un elemento son pares *nombre-valor*, separados por un signo de igual «=» y escritos en la etiqueta de comienzo de un elemento, después del nombre del elemento. El valor puede estar rodeado por comillas dobles o simples. Los atributos de los tags nos sirven para cambiar su comportamiento o *configurarlos*.
+En su mayoría de los atributos de un elemento son pares _nombre-valor_, separados por un signo de igual «=» y escritos en la etiqueta de comienzo de un elemento, después del nombre del elemento. El valor puede estar rodeado por comillas dobles o simples. Los atributos de los tags nos sirven para cambiar su comportamiento o _configurarlos_.
 
 Por ejemplo, el tag `<img>` sirve para mostrar una imagen. Este tag recibe el atributo `src` que indica la [URL](https://es.wikipedia.org/wiki/Localizador_de_recursos_uniforme) de donde está la imagen que queremos mostrar.
 
@@ -65,19 +63,19 @@ Por ejemplo, el tag `<img>` sirve para mostrar una imagen. Este tag recibe el at
 
 ### Tags
 
-#### ***\<html>***
+#### **_\<html>_**
 
 El tag `<html>` va a contener a todos los demás tags dentro suyo. Este tag básicamente sirve para avisarle al browser que el contenido debe ser interpretado como `html`.
 
-#### ***\<head>***
+#### **_\<head>_**
 
-Este tag sirve para contener tags que contengan información sobre el documento, pero es información que no queremos que se renderee. Comunmente contiene el *titulo* de la página y *links* a recursos externos que pueda usar la página (javascript o css).
+Este tag sirve para contener tags que contengan información sobre el documento, pero es información que no queremos que se renderee. Comunmente contiene el _titulo_ de la página y _links_ a recursos externos que pueda usar la página (javascript o css).
 
-#### ***\<title>***
+#### **_\<title>_**
 
 Es el título de la página, se mostrará en el tab del browser o en la parte superior (pero no en la página).
 
-#### ***\<body>***
+#### **_\<body>_**
 
 En este tag estára encerrado todo lo que querramos que se vea en la pantalla.
 
@@ -88,8 +86,7 @@ Entonces, hasta ahora, un documento HTML se ve así:
   <head>
     <title>Es el título de nuestra página</title>
   </head>
-  <body>
-  </body>
+  <body></body>
 </html>
 ```
 
@@ -97,7 +94,7 @@ Como ven, para mayor fácilidad en la lectura y la estructuración del documento
 
 (Todos los tags que presentaremos más abajo van siempre adentro de un tag `<body>`)
 
-#### ***\<p>***
+#### **_\<p>_**
 
 Es el tag para los párrafos. Mostrará el texto contenido dentro en una nueva línea.
 
@@ -105,23 +102,23 @@ Es el tag para los párrafos. Mostrará el texto contenido dentro en una nueva l
 <p>Soy un párrafo</p>
 ```
 
-#### ***\<span>***
+#### **_\<span>_**
 
 El elemento span es un contenedor de texto genérico. No inserta una nueva linea, como lo hace el elemento p. Sirve básicamente para darle estilo al texto.
 
-#### ***\<div>***
+#### **_\<div>_**
 
-El elemento div es un *contenedor* genérico. Es usado principalmente para dar estilo, imaginen que es una caja (cuyo tamaño y color podes modificar *a piacere*), y que dentro podés poner otras cajas iguales.
+El elemento div es un _contenedor_ genérico. Es usado principalmente para dar estilo, imaginen que es una caja (cuyo tamaño y color podes modificar _a piacere_), y que dentro podés poner otras cajas iguales.
 
-#### ***\<a>***
+#### **_\<a>_**
 
-El tag a (del inglés *anchor*), nos permite crear **links** a otros documentos y páginas. Este tag recibe el *atributo* `href` que indica a dónde apunta el link.
+El tag a (del inglés _anchor_), nos permite crear **links** a otros documentos y páginas. Este tag recibe el _atributo_ `href` que indica a dónde apunta el link.
 
 ```html
 <a href="http://www.soyhenry.com">Esto es un link!</a>
 ```
 
-#### ***\<h1> ... \<h6>***
+#### **_\<h1> ... \<h6>_**
 
 Son los tags de encabezado o títulos, están pensandos del 1 al 6, para indicar la importancia del contenido y su jerarquía.
 
@@ -131,19 +128,19 @@ Son los tags de encabezado o títulos, están pensandos del 1 al 6, para indicar
 <h6>El título menos importante.</h6>
 ```
 
-#### ***\<img>***
+#### **_\<img>_**
 
-Este tag nos permite mostrar imágenes en la pantalla. Necesita el atributo `src` que indica la *URL* de donde sacar la imagen a mostrar.
+Este tag nos permite mostrar imágenes en la pantalla. Necesita el atributo `src` que indica la _URL_ de donde sacar la imagen a mostrar.
 
 ```html
 <img src="http://www.soyhenry.com/imageurl.jpg" />
 ```
 
-#### ***\<ul>***
+#### **_\<ul>_**
 
 Este tag representa una lista desordenada (del inglés "unordered list"). Este tag está diseñado para contener otros tags de tipo item. También existe el tag `<ol>` que viene de "ordered list".
 
-#### ***\<li>***
+#### **_\<li>_**
 
 Son los tags que contienen los items de la lista ('list item').
 
@@ -189,13 +186,13 @@ Es importante notar que distintos atributos pueden recibir distintos valores, ge
 Antes de empezar a dar estilos, necesitamos una forma de decirle al browser qué vamos a darles reglas de estilo.
 Hay varias formas de lograr esto (más adelante veremos en detalle como funcionan cada una):
 
-* usando el atributo style: esta es la forma primitiva más simple, básicamente le damos reglas a cada tag html.
-* usando el tag `<style/>`: Se utiliza este tag en el `<head>` del documento HTML, con esto logramos agrupar todas las reglas que luego queremos que se apliquen a los elementos HTML.
-* Usar el tag `<link/>`: Este método nos permite definir las reglas CSS en un documento separado e *importarlo* a nuestra página (la ventaja que tiene es que podemos importar el mismo CSS a varias páginas).
+- usando el atributo style: esta es la forma primitiva más simple, básicamente le damos reglas a cada tag html.
+- usando el tag `<style/>`: Se utiliza este tag en el `<head>` del documento HTML, con esto logramos agrupar todas las reglas que luego queremos que se apliquen a los elementos HTML.
+- Usar el tag `<link/>`: Este método nos permite definir las reglas CSS en un documento separado e _importarlo_ a nuestra página (la ventaja que tiene es que podemos importar el mismo CSS a varias páginas).
 
 ### Atributo style
 
-Todos los *tags* HTML pueden recibir el atributo `style`. Este atributo indica las reglas CSS (que veremos más abajo), que se aplicaran **sólo** al elemento que las tiene.
+Todos los _tags_ HTML pueden recibir el atributo `style`. Este atributo indica las reglas CSS (que veremos más abajo), que se aplicaran **sólo** al elemento que las tiene.
 
 ```html
 <h1 style="color:blue;">Esto es un título Azul</h1>
@@ -203,14 +200,14 @@ Todos los *tags* HTML pueden recibir el atributo `style`. Este atributo indica l
 
 Pros:
 
-* Fácil de escribir y leer.
-* Cómo se aplican a un sólo elemento no hay forma de confundirse y que se aplique la regla a un elemento no deseado.
+- Fácil de escribir y leer.
+- Cómo se aplican a un sólo elemento no hay forma de confundirse y que se aplique la regla a un elemento no deseado.
 
 Cons:
 
-* La regla aplica a un sólo elemento, si quisieramos que varios elementos tengan la misma regla, deberíamos copypastear!
+- La regla aplica a un sólo elemento, si quisieramos que varios elementos tengan la misma regla, deberíamos copypastear!
 
-### ***\<style>***
+### **_\<style>_**
 
 El tag `<style>`, que se escribe en el `<head>` del documento, nos permite escribir reglas que se aplicaran a uno o varios elementos html. Es importante notar que con esta forma, podremos darle estilo a muchos elementos de una sóla vez, pero sólo a elementos que estén en el mismo documento.
 
@@ -221,55 +218,53 @@ El tag `<style>`, que se escribe en el `<head>` del documento, nos permite escri
       /*<!-- acá van las reglas -->*/
     </style>
   </head>
-  <body>
-  </body>
+  <body></body>
 </html>
 ```
 
 Pros:
 
-* Lugar central donde podemos escribir las reglas CSS del documento
-* Podemos compartir reglas entre varios elementos iguales
+- Lugar central donde podemos escribir las reglas CSS del documento
+- Podemos compartir reglas entre varios elementos iguales
 
 Cons:
 
-* No podemos compartir las reglas con *otro* documento HTML.
-* Hay que prestar atención a las reglas, y a qué elementos se aplican.
+- No podemos compartir las reglas con _otro_ documento HTML.
+- Hay que prestar atención a las reglas, y a qué elementos se aplican.
 
-### ***\<link>***
+### **_\<link>_**
 
-Con el tag `<link>` dentro del `<head>` del documento, vamos a poder *importar* un archivo css que contenga varias reglas CSS. Funciona similar al tag `<style/>` anterior. Pero ahora tenemos la ventaja que podemos *compartir* el mismo archivo css con varios documentos HTML.
+Con el tag `<link>` dentro del `<head>` del documento, vamos a poder _importar_ un archivo css que contenga varias reglas CSS. Funciona similar al tag `<style/>` anterior. Pero ahora tenemos la ventaja que podemos _compartir_ el mismo archivo css con varios documentos HTML.
 
 ```html
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-  </body>
+  <body></body>
 </html>
 ```
 
 Pros:
 
-* Lugar central donde podemos escribir las reglas CSS del documento
-* Podemos compartir reglas entre varios elementos iguales
-* Podemos compartir reglas entre varios documentos HTML
-  
+- Lugar central donde podemos escribir las reglas CSS del documento
+- Podemos compartir reglas entre varios elementos iguales
+- Podemos compartir reglas entre varios documentos HTML
+
 Cons:
 
-* Hay que prestar atención a las reglas, y a qué elementos se aplican.
+- Hay que prestar atención a las reglas, y a qué elementos se aplican.
 
 ### Selectores
 
-Para poder aplicar reglas de estilo a los elementos html, necesitamos una forma de saber cómo seleccionar los elementos a los que deseamos aplicar las reglas, para esto sirven los *selectores CSS*.
+Para poder aplicar reglas de estilo a los elementos html, necesitamos una forma de saber cómo seleccionar los elementos a los que deseamos aplicar las reglas, para esto sirven los _selectores CSS_.
 
 ![alt text](/_src/assets/08-HTML/css-declaration-small.png)
 
-Hay varios tipos de selectores, los más básicos son los de tipo, donde indicamos a qué clase de elemntos se van a aplicar las reglas, el ejemplo de arriba usa un selector de tipo. Está diciendo: *aplicarle a todos los elementos de tipo `<p>` la regla de texto color rojo*.
+Hay varios tipos de selectores, los más básicos son los de tipo, donde indicamos a qué clase de elemntos se van a aplicar las reglas, el ejemplo de arriba usa un selector de tipo. Está diciendo: _aplicarle a todos los elementos de tipo `<p>` la regla de texto color rojo_.
 
-El selector de tipo se puede usar con cualquier tipo de tag: p, div, body, etc. Otra forma de usar selectors poniendole un *nombre* o *identificador* a cada elemento HTML. Para esto existe un ***atributo*** que pueden recibir todos los tags llamados: `id` y `class`.
+El selector de tipo se puede usar con cualquier tipo de tag: p, div, body, etc. Otra forma de usar selectors poniendole un _nombre_ o _identificador_ a cada elemento HTML. Para esto existe un **_atributo_** que pueden recibir todos los tags llamados: `id` y `class`.
 
 ```html
 <div id="divId"></div>
@@ -282,37 +277,40 @@ El selector de tipo se puede usar con cualquier tipo de tag: p, div, body, etc. 
 
 #### Selectores básicos
 
-* **Selector de tipo**: Selecciona todos los elementos que coinciden con el nombre del elemento especificado.
-    Sintaxis: eltname
-    Ejemplo: input se aplicará a cualquier elemento `<input>`.
-* **Selector de clase**:
-    Selecciona todos los elementos que tienen el atributo de class especificado.
-    Sintaxis: .classname
-    Ejemplo: .index seleccionará cualquier elemento que tenga la clase "index".
-* **Selector de ID**
-    Selecciona un elemento basándose en el valor de su atributo id. Solo puede haber un elemento con un determinado ID dentro de un documento.
-    Sintaxis: #idname
-    Ejemplo: #toc se aplicará a cualquier elemento que tenga el ID "toc".
-* **Selector universal**
-    Selecciona todos los elementos. Opcionalmente, puede estar restringido a un espacio de nombre específico o a todos los espacios de nombres.
-    Sintaxis: *ns|* *|*
-    Ejemplo: * se aplicará a todos los elementos del documento.
-* **Selector de atributo**
-    Selecciona elementos basándose en el valor de un determinado atributo.
-    Sintaxis: [attr] [attr=value] [attr~=value] [attr|=value] [attr^=value] [attr$=value] [attr*=value]
-    Ejemplo: [autoplay] seleccionará todos los elementos que tengan el atributo "autoplay" establecido (a cualquier valor).
+- **Selector de tipo**: Selecciona todos los elementos que coinciden con el nombre del elemento especificado.
+  Sintaxis: eltname
+  Ejemplo: input se aplicará a cualquier elemento `<input>`.
+- **Selector de clase**:
+  Selecciona todos los elementos que tienen el atributo de class especificado.
+  Sintaxis: .classname
+  Ejemplo: .index seleccionará cualquier elemento que tenga la clase "index".
+- **Selector de ID**
+  Selecciona un elemento basándose en el valor de su atributo id. Solo puede haber un elemento con un determinado ID dentro de un documento.
+  Sintaxis: #idname
+  Ejemplo: #toc se aplicará a cualquier elemento que tenga el ID "toc".
+- **Selector universal**
+  Selecciona todos los elementos. Opcionalmente, puede estar restringido a un espacio de nombre específico o a todos los espacios de nombres.
+  Sintaxis: _ns|_ _|_
+  Ejemplo: \* se aplicará a todos los elementos del documento.
+- **Selector de atributo**
+  Selecciona elementos basándose en el valor de un determinado atributo.
+  Sintaxis: [attr] [attr=value] [attr~=value] [attr|=value] [attr^=value] [attr$=value] [attr*=value]
+  Ejemplo: [autoplay] seleccionará todos los elementos que tengan el atributo "autoplay" establecido (a cualquier valor).
 
 #### Anatomía de las reglas de estilo
 
-Ahora que sabemos como *seleccionar* los elementos a los que queremos aplicar las reglas podemos escribir qué reglas queremos que se apliquen. Para el ejemplo vamos a usar la etiqueta `<style>`.
+Ahora que sabemos como _seleccionar_ los elementos a los que queremos aplicar las reglas podemos escribir qué reglas queremos que se apliquen. Para el ejemplo vamos a usar la etiqueta `<style>`.
 
 ```html
 <style>
-  body {}
+  body {
+  }
 
-  .divClass {}
+  .divClass {
+  }
 
-  #divId {}
+  #divId {
+  }
 </style>
 ```
 
@@ -334,21 +332,21 @@ Para poder entender y luego manipular la forma en que los elementos HTML aparece
 
 ![Image](/_src/assets/08-HTML/boxModel.png)
 
-En un documento html cada elemento es representado como una *caja rectangular* y en CSS cada una de estas cajas tiene 4 capas que podemos manipular. Esto se conoce como ***Modelo de Caja*** o ***Box Model***.
+En un documento html cada elemento es representado como una _caja rectangular_ y en CSS cada una de estas cajas tiene 4 capas que podemos manipular. Esto se conoce como **_Modelo de Caja_** o **_Box Model_**.
 
 Yendo desde afuera hacia adentro, las capas son:
 
-* `margin`: el espacio que separa al elemento de los otros elementos. Si los pensamos como cajas, es el espacio entre las cajas.
+- `margin`: el espacio que separa al elemento de los otros elementos. Si los pensamos como cajas, es el espacio entre las cajas.
 
-* `border`: el "borde de la caja". Podemos hacerlo visible con diferentes grosores, estilos y colores, como ya hicimos varias veces en ejercicios anteriores.
+- `border`: el "borde de la caja". Podemos hacerlo visible con diferentes grosores, estilos y colores, como ya hicimos varias veces en ejercicios anteriores.
 
-* `padding`: el espacio entre el borde de la caja y su contenido. En la metáfora de la caja, podríamos por ejemplo tener una caja grande con algo chiquito adentro, osea que "habría mucho padding".
+- `padding`: el espacio entre el borde de la caja y su contenido. En la metáfora de la caja, podríamos por ejemplo tener una caja grande con algo chiquito adentro, osea que "habría mucho padding".
 
-* `content`: el contenido de la caja. Por ejemplo el texto en un h1, otros tags anidados, etc, todo lo que esté contenido en el elemento.
+- `content`: el contenido de la caja. Por ejemplo el texto en un h1, otros tags anidados, etc, todo lo que esté contenido en el elemento.
 
-### ***height*** y ***width***
+### **_height_** y **_width_**
 
-Podemos decirle al navegador exactamente qué tan ***alto*** y ***ancho*** queremos que sea nuestro elemento (contenido), esto se usa en `div`, `img` y otros elementos basados en la altura (para determinar el tamaño del texto, necesitaremos usar un propiedad de estilo diferente). Los valores de tamaño pueden estar en muchas medidas diferentes, pero el más común es el píxel "px".
+Podemos decirle al navegador exactamente qué tan **_alto_** y **_ancho_** queremos que sea nuestro elemento (contenido), esto se usa en `div`, `img` y otros elementos basados en la altura (para determinar el tamaño del texto, necesitaremos usar un propiedad de estilo diferente). Los valores de tamaño pueden estar en muchas medidas diferentes, pero el más común es el píxel "px".
 
 ```css
 div {
@@ -357,13 +355,13 @@ div {
 }
 ```
 
-### ***margin***
+### **_margin_**
 
 El margen es el área transparente alrededor del elemento que deseas que no choque con nada. Es la capa más externa en el Modelo de caja.
 
-### ***border***
+### **_border_**
 
-Borde establecerá un *borde* alrededor de su elemento, puedes determinar el tamaño, color y estilo del borde. Puede encontrar una lista de estilos de borde aquí: <https://developer.mozilla.org/en-US/docs/Web/CSS/border>. El borde está fuera del padding, pero dentro del margen.
+Borde establecerá un _borde_ alrededor de su elemento, puedes determinar el tamaño, color y estilo del borde. Puede encontrar una lista de estilos de borde aquí: <https://developer.mozilla.org/en-US/docs/Web/CSS/border>. El borde está fuera del padding, pero dentro del margen.
 
 ```css
 div {
@@ -371,29 +369,29 @@ div {
 }
 ```
 
-### ***padding***
+### **_padding_**
 
 El padding es el area transparente entre el borde y el contenido, es similar al margen, pero para adentro
 
 ### Cálculo del box model
 
-Cuando establecemos el ***alto*** y el ***ancho*** de un elemento a traves de la regla css `height` y `width`, sólo estamos configurando el contenido. Para calcular la altura y el ancho reales, tenemos que tener en cuenta el ***padding***, el ***borde*** y el ***margen***.
+Cuando establecemos el **_alto_** y el **_ancho_** de un elemento a traves de la regla css `height` y `width`, sólo estamos configurando el contenido. Para calcular la altura y el ancho reales, tenemos que tener en cuenta el **_padding_**, el **_borde_** y el **_margen_**.
 
-* `padding` es un área transparente alrededor del contenido.
-* `border` se envolverá alrededor del relleno
-* `margin` es el área transparente más externa que envuelve toda la caja.
+- `padding` es un área transparente alrededor del contenido.
+- `border` se envolverá alrededor del relleno
+- `margin` es el área transparente más externa que envuelve toda la caja.
 
 Por ejemplo. Si establecemos la altura del contenido en 20 px y el ancho en 20 px, el relleno en 5 px, el borde en 1 px y el margen en 10 px.
 
-  Altura real = 25px (contenido) + 2 * 5px (relleno, cada lado) + 2 * 1 (borde de cada lado) + 2 * 10 (margen, cada lado) = 57px
+Altura real = 25px (contenido) + 2 _ 5px (relleno, cada lado) + 2 _ 1 (borde de cada lado) + 2 \* 10 (margen, cada lado) = 57px
 
-  Ancho real = 25px (contenido) + 2 * 5px (relleno, cada lado) + 2 * 1 (borde de cada lado) + 2 * 10 (margen, cada lado) = 57px
+Ancho real = 25px (contenido) + 2 _ 5px (relleno, cada lado) + 2 _ 1 (borde de cada lado) + 2 \* 10 (margen, cada lado) = 57px
 
 Saber esto nos ayudará a dimensionar y posicionar nuestros elementos correctamente.
 
 ## Otras propiedades CSS
 
-### ***background***
+### **_background_**
 
 El background se puede establecer en una variedad de reglas, la más común sería establecer el fondo en un color o una imagen. Ambos se muestran a continuación.
 
@@ -403,19 +401,19 @@ El background se puede establecer en una variedad de reglas, la más común ser�
 }
 
 #divId {
-  background: url ('http://imageurl.com/image.jpg');
+  background: url ("http://imageurl.com/image.jpg");
 }
 ```
 
-### ***color***
+### **_color_**
 
 El color se usa sólo para texto. Establecerá el color de tu texto
 
-### ***font-size***
+### **_font-size_**
 
 No podemos usar ancho o alto para el texto, pero podemos determinar el tamaño de la fuente utilizada. Puede usar cualquier unidad de tamaño aquí que usaría con una fuente en un procesador de textos (px, em, in, etc.). El más popular es px.
 
-## Hojas de estilo externas y el elemento ***\<link>***
+## Hojas de estilo externas y el elemento **_\<link>_**
 
 Hemos explicado cómo usar el elemento html `<style>`. Esto está bien si tiene una página web muy pequeña y un estilo mínimo, pero la mayoría de las páginas comenzarían a sentirse abarrotadas muy rápidamente si incluimos todo nuestro CSS en el HTML. Afortunadamente, tenemos una solución para eso, hojas de estilo externas y el elemento `<link>`.
 
@@ -428,18 +426,18 @@ La bandera rel solo le dirá al navegador qué tipo de archivo es y cómo proces
 La bandera href le dirá al navegador dónde encontrar el archivo. Si el archivo está en la misma carpeta que nuestro archivo html, podemos configurarlo en: "./styles.css" (esta ruta será relativa)
 
 ```html
-<link rel = "stylesheet" href = "./ styles.css" />
+<link rel="stylesheet" href="./ styles.css" />
 ```
 
 Ahora que tenemos nuestra hoja de estilo externa vinculada a nuestro archivo HTML, deberíamos ver las reglas de estilo que establecemos reflejadas en nuestra página.
 
 ## Recursos adicionales
 
-* [MDN official CSS documentation](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/How_CSS_works)
-* [MDN official HTML documentation](https://developer.mozilla.org/en-US/docs/Web/HTML)
-* [Codecademy: Learn HTML](https://www.codecademy.com/learn/learn-html)
-* [Codecademy: Learn CSS](https://www.codecademy.com/learn/learn-css)
-* [w3schools: The Box Model](https://www.w3schools.com/css/css_boxmodel.asp)
+- [MDN official CSS documentation](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/How_CSS_works)
+- [MDN official HTML documentation](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [Codecademy: Learn HTML](https://www.codecademy.com/learn/learn-html)
+- [Codecademy: Learn CSS](https://www.codecademy.com/learn/learn-css)
+- [w3schools: The Box Model](https://www.w3schools.com/css/css_boxmodel.asp)
 
 <table class="hide" width="100%" style='table-layout:fixed;'>
   <tr>
@@ -455,4 +453,4 @@ Ahora que tenemos nuestra hoja de estilo externa vinculada a nuestro archivo HTM
 
 ---
 
-#### Si tienes dudas sobre este tema, puedes consultarlas en el canal ***html-y-css*** de Slack
+#### Si tienes dudas sobre este tema, puedes consultarlas en el canal **_html-y-css_** de Slack

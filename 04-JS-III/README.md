@@ -14,12 +14,12 @@
 
 # JavaScript III
 
-#### Continuación de bucles ***for*** y ***arrays***
+#### Continuación de bucles **_for_** y **_arrays_**
 
 En esta lección cubriremos:
 
-* Introducción a los arrays
-* Bucles ***for*** con arrays
+- Introducción a los arrays
+- Bucles **_for_** con arrays
 
 <div class="iframeContainer">
 <iframe src="https://player.vimeo.com/video/424916422?h=c1ea37841e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="03 - JS III - Arrays"></iframe>
@@ -30,17 +30,17 @@ En esta lección cubriremos:
 En la lección anterior discutimos los 3 tipos de datos básicos (cadenas/strings, números y booleanos) y cómo asignar esos tipos de datos a las variables. Discutimos cómo una variable solo puede apuntar a una sola cadena, número o booleano. Sin embargo, en muchos casos queremos poder apuntar a una colección de tipos de datos. Por ejemplo, ¿qué pasaría si quisiéramos hacer un seguimiento del nombre de cada estudiante en esta clase usando una sola variable, `nombresEstudiantes`. Podemos hacer eso usando Arrays. Podemos pensar en las matrices como contenedores de almacenamiento para colecciones de datos. Construir una matriz es simple, declarar una variable y establecerla en []. Luego podemos agregar al contenedor (separadas por coma) tantas cadenas, números o booleanos como queramos y acceder a esos elementos cuando lo deseemos.
 
 ```javascript
-const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
+const nombresEstudiantes = ["Martin", "Antonio", "Sara", "Samuel"];
 ```
 
-### ***.length***
+### **_.length_**
 
-Al igual que el tipo de dato *String* tiene un método incorporado `.length`, también lo hace la matriz. De hecho, la matriz tiene muchos métodos incorporados útiles (los discutiremos en lecciones posteriores). Al igual que la cadena `.length` cuenta los caracteres, la matriz`.length` devolverá el número de elementos en una matriz:
+Al igual que el tipo de dato _String_ tiene un método incorporado `.length`, también lo hace la matriz. De hecho, la matriz tiene muchos métodos incorporados útiles (los discutiremos en lecciones posteriores). Al igual que la cadena `.length` cuenta los caracteres, la matriz`.length` devolverá el número de elementos en una matriz:
 
 ```javascript
-const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
+const nombresEstudiantes = ["Martin", "Antonio", "Sara", "Samuel"];
 
-console.log(nombresEstudiantes.length);  // 4
+console.log(nombresEstudiantes.length); // 4
 ```
 
 ### Acceso a elementos en una matriz
@@ -55,9 +55,9 @@ const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
 Para acceder al elemento, escribiremos el nombre o la variable de matriz, seguidos de corchetes que contienen la asignación numérica.
 
 ```javascript
-const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
+const nombresEstudiantes = ["Martin", "Antonio", "Sara", "Samuel"];
 
-console.log(nombresEstudiantes[1]);  // 'Antonio'
+console.log(nombresEstudiantes[1]); // 'Antonio'
 ```
 
 Para acceder dinámicamente al último elemento de la matriz, utilizaremos el método `.length`. En nuestra matriz `nombresEstudiantes`, la longitud es 4. Sabemos que el primer elemento siempre será 0, y cada elemento posterior se desplaza sobre un número. Entonces, en nuestro ejemplo, el último elemento tiene un índice de 3. Usando nuestra propiedad de longitud mostraremos cómo se hace cuando no sabemos el número de elementos en una matriz:
@@ -73,66 +73,66 @@ console.log(nombresEstudiantes[nombresEstudiantes.length - 1]);  // 'Samuel'
 Podemos asignar y reasignar cualquier índice en la matriz usando el paréntesis/índice y un "=".
 
 ```javascript
-const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
+const nombresEstudiantes = ["Martin", "Antonio", "Sara", "Samuel"];
 
-nombresEstudiantes[0] = 'Jorge';
+nombresEstudiantes[0] = "Jorge";
 
-console.log(nombresEstudiantes);  // ['Jorge', 'Antonio', 'Sara', 'Samuel']
+console.log(nombresEstudiantes); // ['Jorge', 'Antonio', 'Sara', 'Samuel']
 ```
 
-### ***.push*** y ***.pop***
+### **_.push_** y **_.pop_**
 
 Otros dos métodos de matriz incorporados muy útiles son `.push` y `.pop`. Estos métodos se refieren a la adición y eliminación de elementos de la matriz después de su declaración inicial.
 
 `.push` agrega un elemento al final de la matriz, incrementando su longitud en 1. `.push` devuelve la nueva longitud.
 
 ```javascript
-const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
+const nombresEstudiantes = ["Martin", "Antonio", "Sara", "Samuel"];
 
-nombresEstudiantes.push('Patricia');
+nombresEstudiantes.push("Patricia");
 
-console.log(nombresEstudiantes);  // ['Martin', 'Antonio', 'Sara', 'Samuel', 'Patricia']
+console.log(nombresEstudiantes); // ['Martin', 'Antonio', 'Sara', 'Samuel', 'Patricia']
 ```
 
-`.pop` elimina el último elemento de la matriz, disminuyendo la longitud en 1. `.pop` devuelve el elemento "reventado" (*popped*).
+`.pop` elimina el último elemento de la matriz, disminuyendo la longitud en 1. `.pop` devuelve el elemento "reventado" (_popped_).
 
 ```javascript
-const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
+const nombresEstudiantes = ["Martin", "Antonio", "Sara", "Samuel"];
 
 nombresEstudiantes.pop();
 
-console.log(nombresEstudiantes);  // ['Martin', 'Antonio', 'Sara']
+console.log(nombresEstudiantes); // ['Martin', 'Antonio', 'Sara']
 ```
 
-### ***.unshift*** y ***.shift***
+### **_.unshift_** y **_.shift_**
 
 `.unshift` y `.shift` son exactamente como `.push` y `.pop`, excepto que operan en el primer elemento de la matriz. `.unshift(item)` colocará un nuevo elemento en la primera posición de la matriz, y `.shift()` eliminará el primer elemento de la matriz.
 
 ```javascript
-const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
+const nombresEstudiantes = ["Martin", "Antonio", "Sara", "Samuel"];
 
-nombresEstudiantes.unshift('Leo');
+nombresEstudiantes.unshift("Leo");
 
-console.log(nombresEstudiantes);  // ['Leo', 'Martin', 'Antonio', 'Sara', 'Samuel']
+console.log(nombresEstudiantes); // ['Leo', 'Martin', 'Antonio', 'Sara', 'Samuel']
 
 nombresEstudiantes.shift();
 
-console.log(nombresEstudiantes);  // ['Martin', 'Antonio', 'Sara', 'Samuel']
+console.log(nombresEstudiantes); // ['Martin', 'Antonio', 'Sara', 'Samuel']
 ```
 
 ### Notas sobre las matrices
 
 Debido a que Javascript no es un lenguaje fuertemente tipado, las matrices tampoco necesitan ser tipadas. Las matrices en Javascript pueden contener múltiples tipos de datos diferentes en la misma matriz.
 
-## Utilizando bucles ***for*** en arrays
+## Utilizando bucles **_for_** en arrays
 
 La mayoría de las veces, los bucles for se utilizan para iterar sobre todos los elementos de una matriz. Usando la técnica de acceso al índice ("index access technique") podemos acceder a cada elemento de la matriz. Para hacer esto, usamos el método `.length` como punto de parada para el ciclo.
 
 ```javascript
-const nombresEstudiantes = ['Martin', 'Antonio', 'Sara', 'Samuel'];
+const nombresEstudiantes = ["Martin", "Antonio", "Sara", "Samuel"];
 
 for (let i = 0; i < nombresEstudiantes.length; i++) {
-    console.log(nombresEstudiantes[i]);
+  console.log(nombresEstudiantes[i]);
 }
 
 // 'Martin'
@@ -143,8 +143,8 @@ for (let i = 0; i < nombresEstudiantes.length; i++) {
 
 ## Recursos adicionales
 
-* [MDN: Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-* [MDN: for Loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+- [MDN: Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+- [MDN: for Loops](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
 
 ## Homework
 
@@ -152,4 +152,4 @@ Completa la tarea descrita en el archivo [README](https://github.com/soyHenry/Pr
 
 ---
 
-#### Si tienes dudas sobre este tema, puedes consultarlas en el canal ***04_js-iii*** de Slack
+#### Si tienes dudas sobre este tema, puedes consultarlas en el canal **_04_js-iii_** de Slack

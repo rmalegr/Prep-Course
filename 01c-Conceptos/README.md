@@ -31,13 +31,13 @@ Cuando escribimos código, todo el tiempo mezclamos expresiones y statements par
 
 ```js
 // retorna algo
-1 + 1
+1 + 1;
 Math.pow(2, 3) + 4;
-'hola' + ' soy una expression';
+"hola" + " soy una expression";
 ```
 
 `1 + 1` intuitivamente se convierte o resuelve a `2`! eso es una expresión. Es cualquier cosa que escribamos y esperamos que se convierta en otro valor.
-Cuando *pegamos* una expression en la consola de Firefox o de Chrome, vamos a poder ver el resultado al que resuelve:
+Cuando _pegamos_ una expression en la consola de Firefox o de Chrome, vamos a poder ver el resultado al que resuelve:
 
 ![Expresion](/_src/assets/conceptos/expresion.png)
 
@@ -50,34 +50,34 @@ if (condicion) {
 }
 ```
 
-En este ejemplo, vemos que el `if` "hace algo", es decir, escribimos el if para que bifurque le ejecución del código según el valor de `condicion`. Como ya sabemos, si `condicion` tiene un valor *verdadero* entonces se ejecutará el bloque de código de arriba, y si no, el de abajo.
-Fijensé que acá es importante discriminar lo que está *adentro* de los bloques de código, ya que ahí adentro podriamos escribir **expresiones** que sí devuelvan algo.
+En este ejemplo, vemos que el `if` "hace algo", es decir, escribimos el if para que bifurque le ejecución del código según el valor de `condicion`. Como ya sabemos, si `condicion` tiene un valor _verdadero_ entonces se ejecutará el bloque de código de arriba, y si no, el de abajo.
+Fijensé que acá es importante discriminar lo que está _adentro_ de los bloques de código, ya que ahí adentro podriamos escribir **expresiones** que sí devuelvan algo.
 
-Nos podemos dar cuenta que algo es un statement, porque si lo *pegamos* en la consola del intérprete -por ejemplo, en la consola del Firefox o Chrome- vamos a ver que no produce ningún resultado:
+Nos podemos dar cuenta que algo es un statement, porque si lo _pegamos_ en la consola del intérprete -por ejemplo, en la consola del Firefox o Chrome- vamos a ver que no produce ningún resultado:
 
 ![statement](/_src/assets/conceptos/statement.png)
 
-> Una regla fácil para distinguir entre una *expression* y un *statement* en JS es la siguiente:
-  Si podemos ponerlo dentro de un `console.log`, es una *expression*, si no, es un *statement*.
-  Por ejemplo:
+> Una regla fácil para distinguir entre una _expression_ y un _statement_ en JS es la siguiente:
+> Si podemos ponerlo dentro de un `console.log`, es una _expression_, si no, es un _statement_.
+> Por ejemplo:
 
-  ```js
-    // expresiones!
-    console.log(1 + 1);
-    console.log(Math.pow(2,3) + 22);
-    
-    // statements
-    console.log(if( true) {
-      // código
-    });
-    // jamás haríamos esto de arriba, no?
-  ```
+```js
+  // expresiones!
+  console.log(1 + 1);
+  console.log(Math.pow(2,3) + 22);
+
+  // statements
+  console.log(if( true) {
+    // código
+  });
+  // jamás haríamos esto de arriba, no?
+```
 
 > El **operador ternario**, es una expresión o un statement? ej: (numero > 10 ? 'mayor' : 'menor');
 
 ## Expressions
 
-Cómo dijimos arriba, una *expression* es cualquier pedazo de código **que pueda ser evaluado a un valor**. Justamente por esto, las vamos a usar en lugares donde JavaScript *espera un valor*. Por ejemplo, cómo cuando pasamos una expresión como argumento de una función.
+Cómo dijimos arriba, una _expression_ es cualquier pedazo de código **que pueda ser evaluado a un valor**. Justamente por esto, las vamos a usar en lugares donde JavaScript _espera un valor_. Por ejemplo, cómo cuando pasamos una expresión como argumento de una función.
 
 Según la documentación de MDN, las expresiones se pueden clasificar en las siguientes categorías:
 
@@ -96,8 +96,8 @@ Son las expresiones que resuelven a un valor **númerico**. Por ejemplo:
 Son expresiones que resuelven a una **string**. Por ejemplo:
 
 ```js
-'hola';
-'hola' + ' como va?';
+"hola";
+"hola" + " como va?";
 ```
 
 ## Expresiones lógicas
@@ -115,16 +115,16 @@ false;
 Son expresiones que se escriben por si mismas, y no utilizan ningún operador. Incluyen a valores literales, uso de variables, y algunos keywords de JS. Por ejemplo:
 
 ```js
-'hola';
+"hola";
 23;
 true;
-this;  // hace referencia al keyword this
+this; // hace referencia al keyword this
 numero; // hace referencia a la variable numero
 ```
 
 ## Expresiones de asignación
 
-Cuando utilizamos el operador `=` hablamos de un *assigment expression*. Está expresión retorna el valor asignado. Por ejemplo:
+Cuando utilizamos el operador `=` hablamos de un _assigment expression_. Está expresión retorna el valor asignado. Por ejemplo:
 
 ```js
 a = 1; // si probamos esto en la consola, vemos que retorna el valor 1.
@@ -132,22 +132,22 @@ var c = (a = 2); // vamos a ver que dentro de la variable c, está el valor reto
 ```
 
 > Este es un caso muy particular, nótese que esta expresion retornar una valor, **pero a su vez hace algo**!! Ese algo, es guardar el valor a la derecha del signo `=` en la variable a la izquierda del signo `=`.
-  Otra cosa a notar, es que si usamos el keyword `var` la expresión retorna `undefined`, es decir, no es lo mismo una asignación que una declaración de variables.
+> Otra cosa a notar, es que si usamos el keyword `var` la expresión retorna `undefined`, es decir, no es lo mismo una asignación que una declaración de variables.
 
 ## Expresiones con efectos secundarios (side effects)
 
-Son expresiones que al ser evaluadas retornan algo, pero a su vez tienen *un efecto secundario* (incrementar un valor, etc...). Por ejemplo:
+Son expresiones que al ser evaluadas retornan algo, pero a su vez tienen _un efecto secundario_ (incrementar un valor, etc...). Por ejemplo:
 
 ```js
 contador++; // retorna el valor de contador e incrementa uno.
 ++contador; // incrementa el valor de contador y retorna el valor;
 
-mult *= 2;// multiplica mult por dos, asigna ese valor a mult y retorna el valor;
+mult *= 2; // multiplica mult por dos, asigna ese valor a mult y retorna el valor;
 ```
 
 ## Statements (sentencias)
 
-Los *Statements* son instrucciones que le damos al intérprete de JS para que **haga algo**, ese algo puede ser: crear una variable, ejecutar un bloque de código N veces, ejecutar un bloque de código o no según una condición de verdad, declarar una función, etc...
+Los _Statements_ son instrucciones que le damos al intérprete de JS para que **haga algo**, ese algo puede ser: crear una variable, ejecutar un bloque de código N veces, ejecutar un bloque de código o no según una condición de verdad, declarar una función, etc...
 
 Podemos clasificar a los Statements en las siguientes categorías:
 
@@ -157,9 +157,10 @@ Este tipo de statements indican al intérprete que declare variables o funciones
 
 ```js
 var prueba; // declaro la variable prueba
-var toni;  // declaro la variable toni
+var toni; // declaro la variable toni
 
-function suma(a, b) {  // declaro la función suma;
+function suma(a, b) {
+  // declaro la función suma;
   // bloque de código
 }
 ```
@@ -168,34 +169,33 @@ function suma(a, b) {  // declaro la función suma;
 
 #### Function expressions vs function declarations
 
-Cuando declaramos una función el intérprete puede *interpretarla* como un statement o cómo una expresión, dependiendo del contexto. Por ejemplo:
+Cuando declaramos una función el intérprete puede _interpretarla_ como un statement o cómo una expresión, dependiendo del contexto. Por ejemplo:
 
 ```js
 //function declaration
 
 function resta(a, b) {
- // bloque de código
+  // bloque de código
 }
 
 // function expression
 
 var resta = function (a, b) {
   // bloque de código
-}
+};
 
-array.map(function() {
+array.map(function () {
   // código;
 });
 // el argumento de la función espera una expression
 
-
 // Immediately Invoked Function Expression
 (function () {
-    console.log('IIFE');
+  console.log("IIFE");
 })();
 ```
 
-Cómo vemos en el ejemplo de arriba, el intérprete *hace algo*: declara la función. Por lo tanto es un statement. En cambio, en el segundo ejemplo, estamos haciendo una asignación, y la asignación espera una *expresión* en la parte de la derecha, asi que le estamos pasando un function expression.
+Cómo vemos en el ejemplo de arriba, el intérprete _hace algo_: declara la función. Por lo tanto es un statement. En cambio, en el segundo ejemplo, estamos haciendo una asignación, y la asignación espera una _expresión_ en la parte de la derecha, asi que le estamos pasando un function expression.
 
 > Nótese que un function expression puede no tener nombre. Estas son las llamadas **funciones anónimas**.
 
@@ -204,7 +204,8 @@ Cómo vemos en el ejemplo de arriba, el intérprete *hace algo*: declara la func
 Estos statements sirven para controlar el flujo de ejecución de código según si se cumple o no una condición. Por ejemplo:
 
 ```js
-if (condicion) { // condicion puede ser cualquier expression!!
+if (condicion) {
+  // condicion puede ser cualquier expression!!
   // ejecuta este bloque si condicion es true
 } else if (condicion2) {
   // ejecuta este bloque de código si condicion no es true y condicion2 es true
@@ -247,6 +248,6 @@ throw new Error('hubo un error, se termina la ejecución');
 
 ### Expression Statements
 
-JS tiene la particularidad qué en donde sea que el intérprete espera un *statement*, nosotros podemos pasarle una *expresión*. Esto da lugar a los llamados *expression statements*.
+JS tiene la particularidad qué en donde sea que el intérprete espera un _statement_, nosotros podemos pasarle una _expresión_. Esto da lugar a los llamados _expression statements_.
 
-> **Esto no funciona en sentido inverso, donde se espera una expresión *NO* podemos pasar una statement**.
+> **Esto no funciona en sentido inverso, donde se espera una expresión _NO_ podemos pasar una statement**.

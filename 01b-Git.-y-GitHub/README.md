@@ -32,13 +32,13 @@
 
 Cuando trabajamos con Git nuestros archivos pueden vivir y moverse entre 4 diferentes estados (cuando trabajamos remoto pueden ser más estados, pero lo estudiaremos más adelante)
 
-- **Archivos** ***Tracked***: son los archivos que viven dentro de Git, no tienen cambios pendientes y sus últimas actualizaciones han sido guardadas en el repositorio gracias a los comandos git add y git commit.
+- **Archivos** **_Tracked_**: son los archivos que viven dentro de Git, no tienen cambios pendientes y sus últimas actualizaciones han sido guardadas en el repositorio gracias a los comandos git add y git commit.
 
-- **Archivos** ***Staged***: son archivos en staging. Viven dentro de Git y hay registro de ellos por que han sido afectados por el comando git add, aunque no sus últimos cambios. Git ya sabe de la existencia de estos últimos cambios, pero todavía no han sido guardados definitivamente en el repositorio por que falta ejecutar el comando git commit.
+- **Archivos** **_Staged_**: son archivos en staging. Viven dentro de Git y hay registro de ellos por que han sido afectados por el comando git add, aunque no sus últimos cambios. Git ya sabe de la existencia de estos últimos cambios, pero todavía no han sido guardados definitivamente en el repositorio por que falta ejecutar el comando git commit.
 
-- **Archivos** ***Unstaged***: entiendelos como archivos "Traked pero Unstaged". Son archivos que viven dentro de Git pero no han sido afectados por el comando git add ni mucho menos por git commit. Git tiene un registro de estos archivos, pero esta desactualizado, sus últimas versiones solo estan guardadas en su disco duro.
+- **Archivos** **_Unstaged_**: entiendelos como archivos "Traked pero Unstaged". Son archivos que viven dentro de Git pero no han sido afectados por el comando git add ni mucho menos por git commit. Git tiene un registro de estos archivos, pero esta desactualizado, sus últimas versiones solo estan guardadas en su disco duro.
 
-- **Archivos** ***Untracked***: son archivos que NO viven dentro de Git, solo en el disco duro. Nunca han sido afectados por git add, asi que Git no tiene registro de su existencia.
+- **Archivos** **_Untracked_**: son archivos que NO viven dentro de Git, solo en el disco duro. Nunca han sido afectados por git add, asi que Git no tiene registro de su existencia.
 
 Recuerda que hay un caso muy raro donde los archivos tienen dos estados al mismo tiempo: Staged y Untracked. Esto pasa cuando guardas los cambios de un archivo en el área de Staging (con el comando git commit), pero antes de hacer commit para guardar los cambios en el repositorio haces nuevos cambios que todavía no han sido guardados en el área de Staging (en realidad, todo sigue funcionando igual pero es un poco divertido).
 
@@ -64,10 +64,10 @@ Unir dos Ramas lo conocemos como Merge.
 
 Estándar de equipos de desarrollo..
 
-- Rama ***Master*** o ***Main***: va a producción.
-- Rama ***Development***: se alojan las nuevas features, características y experimentos
-     (para unirse al Máster cuando estén definitivamente listas).
-- Rama ***Hotfix***: issues o errores se solucionan aquí para unirse al Master tan pronto sea posible.
+- Rama **_Master_** o **_Main_**: va a producción.
+- Rama **_Development_**: se alojan las nuevas features, características y experimentos
+  (para unirse al Máster cuando estén definitivamente listas).
+- Rama **_Hotfix_**: issues o errores se solucionan aquí para unirse al Master tan pronto sea posible.
 
 ## Crea un repositorio de Git y haz tu primer commit
 
@@ -116,7 +116,7 @@ git branch "nombre de rama" // crea una rama
 git checkout "nombre de la rama" // cambiarse de rama
 ```
 
-  **NOTA**: Hacer commit antes de cambiar de ramas para no perder los datos.
+**NOTA**: Hacer commit antes de cambiar de ramas para no perder los datos.
 
 ### Fusión de ramas con Git Merge
 
@@ -130,8 +130,8 @@ git merge "cualquier otra rama"
 
 Git nunca borra nada a menos que se lo indiquemos. Cuando usamos los comandos git merge o git checkout estamos cambiando de rama pero creando un nuevo commit, no borrando ramas ni commits ( recuerda que puedes borrar commits con `git reset` / `git branch -d`)
 
-Los archivos con conflictos por el comando git merge entran en un nuevo estado que conocemos como ***Unmerged***.
-Funcionan muy parecido a los archivos en estado ***Unstaged***, algo así como un estado intermedio entre ***Untracked*** y ***Unstaged***, solo debemos ejecutar `git add` para pasarlos al área de ***Staging*** y git commit para aplicar los cambios en el repositorio.
+Los archivos con conflictos por el comando git merge entran en un nuevo estado que conocemos como **_Unmerged_**.
+Funcionan muy parecido a los archivos en estado **_Unstaged_**, algo así como un estado intermedio entre **_Untracked_** y **_Unstaged_**, solo debemos ejecutar `git add` para pasarlos al área de **_Staging_** y git commit para aplicar los cambios en el repositorio.
 
 ## Uso de GitHub
 
@@ -177,8 +177,8 @@ Puedes trabajar con ramas que nunca enviamos a GitHub, así como pueden haber ra
 - **Crear una rama en el repositorio local**:
 
 ```bash
-git branch "nombre de la rama" 
-o 
+git branch "nombre de la rama"
+o
 git checkout -b "nombre de la rama"
 ```
 
@@ -198,21 +198,21 @@ Existen varias formas de solucionar esto para poder aceptar contribuciones. Una 
 
 Solo debemos entrar a la configuración de colaboradores de nuestro proyecto (Repositorio > Settings > Collaborators) y añadir el email o username de los nuevos colaboradores.
 
-#### Flujo de trabajo profesional con ***pull requests***
+#### Flujo de trabajo profesional con **_pull requests_**
 
 En un entorno profesional normalmente se bloquea la rama master, y para enviar código a dicha rama pasa por un code review y luego de su aprobación se unen códigos con los llamados merge request.
 
 Para realizar pruebas enviamos el código a servidores que normalmente los llamamos Staging develop (servidores de pruebas) luego de que se realizan las pruebas pertinentes tanto de código como de la aplicación estos pasan a el servidor de producción con el ya antes mencionado merge request.
 
-#### Ignorar archivos en el Repositorio con ***.gitignore***
+#### Ignorar archivos en el Repositorio con **_.gitignore_**
 
-No todos los archivos que agregas a un proyecto deberían ir a un repositorio, por ejemplo cuando tienes un archivo donde están tus contraseñas que comúnmente tienen la extensión ***.env*** o cuando te estas conectando a una base de datos, son archivos que nadie debe ver.
+No todos los archivos que agregas a un proyecto deberían ir a un repositorio, por ejemplo cuando tienes un archivo donde están tus contraseñas que comúnmente tienen la extensión **_.env_** o cuando te estas conectando a una base de datos, son archivos que nadie debe ver.
 
-#### Reconstruir commits en Git con ***amend***
+#### Reconstruir commits en Git con **_amend_**
 
 A veces hacemos un commit, pero resulta que no queríamos mandarlo porque faltaba algo más. Utilizamos `git commit --amend`, amend en inglés es remendar y lo que hará es que los cambios que hicimos nos los agrega al commit anterior.
 
-#### Git ***reset*** y ***reflog***: úsese en caso de emergencia
+#### Git **_reset_** y **_reflog_**: úsese en caso de emergencia
 
 ¿Qué pasa cuando todo se rompe y no sabemos qué está pasando?
 
@@ -223,7 +223,7 @@ Con git reset hashDelHEAD nos devolvemos al estado en que el proyecto funcionaba
 
 Git reset es una mala práctica, no deberías usarlo en ningún momento; debe ser nuestro último recurso.
 
-#### Buscar en archivos y commits de Git con ***grep*** y ***log***
+#### Buscar en archivos y commits de Git con **_grep_** y **_log_**
 
 A medida que nuestro proyecto se hace grande vamos a querer buscar ciertas cosas.
 
@@ -250,4 +250,4 @@ Si queremos buscar cuántas veces utilizamos un atributo de HTML lo hacemos con 
 
 ---
 
-#### Si tienes dudas sobre este tema, puedes consultarlas en el canal ***01b_git*** de Slack
+#### Si tienes dudas sobre este tema, puedes consultarlas en el canal **_01b_git_** de Slack

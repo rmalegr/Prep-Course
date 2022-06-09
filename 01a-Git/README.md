@@ -116,4 +116,4 @@ Sabiendo esto, el flujo de trabajo básico en Git sería algo así:
 
 ---
 
-#### Si tienes dudas sobre este tema, puedes consultarlas en el canal ***01b_git*** de Slack
+#### Si tienes dudas sobre este tema, puedes consultarlas en el canal **_01b_git_** de Slack
