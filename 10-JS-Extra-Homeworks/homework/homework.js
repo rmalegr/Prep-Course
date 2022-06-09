@@ -117,8 +117,15 @@ function buscoInterseccion(arreglo1, arreglo2){
   //retornar un nuevo array con la intersección de ambos elementos. (Ej: [4,2,3] unión [1,3,4] = [3,4].
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
-  //Escribe tu código aquí  
+  //Escribe tu código aquí
+	var numeros = arreglo1.concat(arreglo2);
+	var resultado = numeros.filter(
+		(valor, indice, arreglo) =>
+			arreglo.indexOf(valor) === indice && arreglo.lastIndexOf(valor) !== indice
+	);
+	return resultado;
 }
+ 
 
 
 
