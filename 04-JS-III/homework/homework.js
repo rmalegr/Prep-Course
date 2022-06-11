@@ -179,9 +179,7 @@ function mesesDelAño (array) {
 
   for (let i = 0; i <= array.length - 1; i++) {
     if (
-      array[i] === 'Marzo' ||
-      array[i] === 'Noviembre' ||
-      array[i] === 'Enero'
+      array[i] === 'Marzo' || array[i] === 'Noviembre' || array[i] === 'Enero'
     ) {
       nuevo_array.push(array[i])
     }
